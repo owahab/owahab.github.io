@@ -1,5 +1,7 @@
-permalink:     date
+permalink: /:year/:month/:day/:title.html
 paginate_path: 'page:num'
+lsi: true
+
 kramdown:
   auto_ids: true
   footnote_nr: 1

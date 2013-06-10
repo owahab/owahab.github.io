@@ -2,6 +2,7 @@
 layout: post
 title: "Organize your downloads, the OS X way"
 disqus_comments: true
+categories: mac osx applescripts
 ---
 
 If you are one of these guys who move files and organize them manually under the correct directory, this blog post isn't for you.
@@ -16,6 +17,6 @@ The problem with that solution is that it didn't work for all the applications I
 
 Writing that script in Bash, PHP or Python is an easy job but I wanted to do it the Mac way so I created this AppleScript and attached it to the Downloads folder using Folder Actions in OS X.
 
-Try it out:
+### Try it out!
 
-http://gist.github.com/445641
+{% gist 445641 %}

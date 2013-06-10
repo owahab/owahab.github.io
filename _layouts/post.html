@@ -18,13 +18,24 @@
   <div id="main_content_wrap" class="outer">
     <section id="main_content" class="inner">
       <p class="meta">Posted: {{ page.date | date_to_string }}</p>
-      <p class="meta">Tags:
-        {% for tag in post.tags %}
-        <li>{{ tag }}</li>
-        {% endfor %}
-      </p>
+      {% if page.categories %}
+        <p class="meta">Tags: {{ page.categories | array_to_sentence_string }}</p>
+      {% endif %}
 
       {{ content }}
+      
+      {% if site.related_posts.size > 1 %}
+      <article class="archives">
+        <div class="related-posts">
+          <h4>Other Posts</h4>
+          <ul>
+          {% for post in site.related_posts limit:site.recent_posts %}
+              <li><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a></li>
+          {% endfor %}
+          </ul>
+        </div>
+      </article>
+      {% endif %}
       
       {% if page.disqus_comments %}
           <div id="disqus_thread"></div>
