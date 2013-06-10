@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8' />
+  <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+  <meta name="description" content="owahab.github.io : Omar's Blog" />
+
+  <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/stylesheet.css">
+
+  <title>Omar's Blog - {{ page.title }}</title>
+</head>
+
+<body>
+
+  {% include header.html %}
+
+  <div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner">
+      <p class="meta">Posted: {{ page.date | date_to_string }}</p>
+      <p class="meta">Tags:
+        {% for tag in post.tags %}
+        <li>{{ tag }}</li>
+        {% endfor %}
+      </p>
+
+      {{ content }}
+      
+      {% if page.disqus_comments %}
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+            window.disqus_identifier = "{{ page.id }}";
+          </script>
+          <script async src="http://hunch.disqus.com/embed.js"></script>
+          <noscript>Please enable JavaScript to view the
+            <a href="http://disqus.com/?ref_noscript=hunch">comments powered by Disqus.</a>
+          </noscript>
+          {% include disqus.html %}
+        </div>
+        {% endif %}
+    </section>
+  </div>
+
+  {% include footer.html %}
+</body>

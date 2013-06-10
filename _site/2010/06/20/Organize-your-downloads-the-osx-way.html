@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8' />
+  <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+  <meta name="description" content="owahab.github.io : Omar's Blog" />
+
+  <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/stylesheet.css">
+
+  <title>Omar's Blog - Organize your downloads, the OS X way</title>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+<div id="header_wrap" class="outer">
+    <header class="inner">
+      <h1 id="project_title"><a href="/">Omar's Blog</a></h1>
+      <h2 id="project_tagline">Organize your downloads, the OS X way</h2>
+    </header>
+</div>
+
+
+  <div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner">
+      <p class="meta">Posted: 20 Jun 2010</p>
+      <p class="meta">Tags:
+        
+      </p>
+
+      <p>If you are one of these guys who move files and organize them manually under the correct directory, this blog post isn&#8217;t for you.</p>
+
+<p>I usually download lots of files and I keep trying to cleanup my Downloads folder in so many ways. First, I configured every application to download in its own folder so I had Firefox, iChat, Mail, etc&#8230;</p>
+
+<p>This didn&#8217;t really help. When the time comes to cleanup the Downloads folder, I usually need to delete very old downloads because I no longer need a software update from mid-2009.</p>
+
+<p>So next I tried one of Firefox&#8217;s extensions to organize my downloads and used Glims for Safari. The idea was to organize downloaded files in a directory hierarchy where I can identify older files and remove them.</p>
+
+<p>The problem with that solution is that it didn&#8217;t work for all the applications I use so I decided to write a script to do that for me.</p>
+
+<p>Writing that script in Bash, PHP or Python is an easy job but I wanted to do it the Mac way so I created this AppleScript and attached it to the Downloads folder using Folder Actions in OS X.</p>
+
+<p>Try it out:</p>
+
+<p>http://gist.github.com/445641</p>
+      
+      
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+            window.disqus_identifier = "/2010/06/20/Organize-your-downloads-the-osx-way";
+          </script>
+          <script async src="http://hunch.disqus.com/embed.js"></script>
+          <noscript>Please enable JavaScript to view the
+            <a href="http://disqus.com/?ref_noscript=hunch">comments powered by Disqus.</a>
+          </noscript>
+          <script>
+// Disqus
+var disqus_shortname = 'hunch';
+if (!window.disqus_url) window.disqus_url = "http://owahab.github.io/2010/06/20/Organize-your-downloads-the-osx-way.html";
+if (!window.disqus_title) window.disqus_title = document.title;
+(function(){try{
+// this hack takes care of formatting # comments
+var v = document.getElementsByClassName('dsq-comment-count');
+var loaded = false;
+var polle;
+for (var i=0;i<v.length;i++) {
+  var e = v.item(i);
+  if (e.firstChild.nodeValue === '-') {
+    polle = e.firstChild;
+    break;
+  }
+}
+function onload() {
+  for (var i=0;i<v.length;i++) {
+    var e = v.item(i);
+    if (e.firstChild.nodeValue !== '0 and 0') {
+      var m = e.firstChild.nodeValue.split(' ');
+      e.firstChild.nodeValue = String(parseInt(m[0]) + parseInt(m[2]));
+      e.style.display = 'inline';
+    }
+  }
+}
+if (polle) {
+  var timer = setInterval(function(){
+    if (polle.nodeValue !== '-') { clearInterval(timer); onload(); }
+  },100);
+}
+}catch(e){}})();
+</script>
+<script async src="http://disqus.com/forums/hunch/count.js"></script>
+        </div>
+        
+    </section>
+  </div>
+
+  <!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+  <footer class="inner">
+    <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+  </footer>
+</div>
+
+</body>

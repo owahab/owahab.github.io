@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8' />
+  <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+  <meta name="description" content="owahab.github.io : Omar's Blog" />
+
+  <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/stylesheet.css">
+
+  <title>Omar's Blog - Ruby 1.8.4 on Ubuntu</title>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+<div id="header_wrap" class="outer">
+    <header class="inner">
+      <h1 id="project_title"><a href="/">Omar's Blog</a></h1>
+      <h2 id="project_tagline">Ruby 1.8.4 on Ubuntu</h2>
+    </header>
+</div>
+
+
+  <div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner">
+      <p class="meta">Posted: 09 May 2006</p>
+      <p class="meta">Tags:
+        
+      </p>
+
+      <p>I tried installing Ruby and Rails on Ubuntu 5.10 (Breezy), I followed exactly what was written in the article: http://fo64.com/articles/2005/10/20/rails-on-breezy But I ran into trouble with Rails after the installation, Rails said: &#8220;Rails does not work with Ruby version 1.8.3&#8221;. After some search and a friend&#8217;s help, it appears that you have to do the following BEFORE you follow what&#8217;s in the article: download your architecture-specific packages from: http://packages.ubuntu.com/dapper/libs/libruby1.8 and http://packages.ubuntu.com/dapper/interpreters/ruby1.8 Then: dpkg -i for both packages. Finally: apt-get install rails. Now you have Ruby 1.8.4 on Ubuntu. Enjoy!</p>
+      
+      
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+            window.disqus_identifier = "/2006/05/09/PHP6";
+          </script>
+          <script async src="http://hunch.disqus.com/embed.js"></script>
+          <noscript>Please enable JavaScript to view the
+            <a href="http://disqus.com/?ref_noscript=hunch">comments powered by Disqus.</a>
+          </noscript>
+          <script>
+// Disqus
+var disqus_shortname = 'hunch';
+if (!window.disqus_url) window.disqus_url = "http://owahab.github.io/2006/05/09/PHP6.html";
+if (!window.disqus_title) window.disqus_title = document.title;
+(function(){try{
+// this hack takes care of formatting # comments
+var v = document.getElementsByClassName('dsq-comment-count');
+var loaded = false;
+var polle;
+for (var i=0;i<v.length;i++) {
+  var e = v.item(i);
+  if (e.firstChild.nodeValue === '-') {
+    polle = e.firstChild;
+    break;
+  }
+}
+function onload() {
+  for (var i=0;i<v.length;i++) {
+    var e = v.item(i);
+    if (e.firstChild.nodeValue !== '0 and 0') {
+      var m = e.firstChild.nodeValue.split(' ');
+      e.firstChild.nodeValue = String(parseInt(m[0]) + parseInt(m[2]));
+      e.style.display = 'inline';
+    }
+  }
+}
+if (polle) {
+  var timer = setInterval(function(){
+    if (polle.nodeValue !== '-') { clearInterval(timer); onload(); }
+  },100);
+}
+}catch(e){}})();
+</script>
+<script async src="http://disqus.com/forums/hunch/count.js"></script>
+        </div>
+        
+    </section>
+  </div>
+
+  <!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+  <footer class="inner">
+    <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+  </footer>
+</div>
+
+</body>

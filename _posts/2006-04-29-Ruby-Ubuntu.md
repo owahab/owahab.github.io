@@ -1,3 +1,10 @@
+---
+layout: post
+title: "PHP6: Is it a suitable time?"
+tags: ruby php
+disqus_comments: true
+---
+
 Since I started to read the news about PHP5, I was happy that Zend has finally deceided to bring us some real OOP to the world of PHP, regardless whether the OOP approch in PHP5 is what really we all wanted or not, still a good step I see in PHP5.
 The major problem with PHP5 was its bad backword-compatibility with PHP4; forget about PHP3; thus major PHP scripts specially open-source mostly faild to work on PHP5 environment. The reason I saw behind this failure was mainly in the pass-by-reference since PHP5 passes by reference while PHP4 passes by value (which is extremely strange thing).
 Anyways, I; like many PHP coders; started to gather news and stuff about PHP5: what's new, how to convert current code, and so forth. I do not think I was that late to do this but after I was OK with all the new stuff in PHP5 I suddenly read in the news about PHP6!!
