@@ -36,7 +36,7 @@ this early stage, we needed a team that can pivot fast, learn a lot and build
 things that we weren't sure how their final status would be.
 
 
-##### 4.Identity:
+##### 4. Identity:
 
 I can't emphasize on the importance of your company identity.
 Don't waste your time trying to be everything for everyone.
