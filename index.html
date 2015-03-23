@@ -4,13 +4,24 @@ title: Random Thoughts
 ---
 
 {% for post in site.posts limit: 1 %}
-  <a href="{{ post.url }}">{{ post.title }}</a>
-  <p class="meta">Posted: {{ post.date | date_to_string }}</p>
+  <h2>{{ post.title }}</h2>
+  <div class="meta">
+    {{ post.date | date_to_string }}
+    {% if post.categories %}
+      <ul class="tags inline">
+        {% for tag in post.categories %}
+        <li class="tag">{{ tag }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+
   <p>
-    {{ post.excerpt }} <a href="{{ post.url }}">Read more</a>
+    {{ post.content }}
   </p>
 {% endfor %}
 
+<hr/>
 <h3>Older posts:</h3>
 <ul>
 {% for post in site.posts offset: 1 %}
