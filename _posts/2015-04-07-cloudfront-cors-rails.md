@@ -31,11 +31,11 @@ pick 'Origin' from the 'Whitelist Headers' and hit 'Add >>'.
 Once the distribution is created (takes less than 10 mins), test it by
 requesting an asset from your newly created CloudFront distribution.
 
-http://www.example.com/assets/application-<HASH>.css
+    http://www.example.com/assets/application-<HASH>.css
 
 becomes:
 
-http://<YOUR DISTRIBUTION SUBDOMAIN>.cloudfront.net/assets/application-<HASH>.css
+    http://<YOUR DISTRIBUTION SUBDOMAIN>.cloudfront.net/assets/application-<HASH>.css
 
 ### Configure Rails to Serve Static Assets
 
