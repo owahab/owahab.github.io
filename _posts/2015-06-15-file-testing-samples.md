@@ -12,7 +12,8 @@ The files can be accessed directly via URL:
     http://owahab.github.io/downloads/samples/{file}
 
 The list of samples can be found here:
-  
-    https://github.com/owahab/owahab.github.io/tree/master/downloads/samples
+[https://github.com/owahab/owahab.github.io/tree/master/downloads/samples][1]
+
+[1]:https://github.com/owahab/owahab.github.io/tree/master/downloads/samples
 
 Enjoy!
