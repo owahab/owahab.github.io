@@ -8,7 +8,7 @@ A friendly geek, a serial entrepreneur and a veteran hacker.
 
 By day, I'm a full stack software engineer with over 13 years of experience specialized in web application development using Open Source technologies such as Ruby on Rails, NodeJS and PHP. I strive to use the best technology to get the job done.
 
-By night, I hangout with my wife and 3 beautiful kids or with friends where we play PES, table tennis and chess.
+By night, I enjoy the company of my wife and 3 beautiful kids or hangout with friends where we play PES, table tennis and chess.
 
 ## Experience
 
