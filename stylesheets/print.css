@@ -1,0 +1,39 @@
+body {
+  box-sizing: border-box;
+  color:#373737;
+  font-size: 16px;
+  font-family: Ubuntu, Helvetica, Arial, sans-serif;
+  line-height: 1.2;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin: 0.25em 0 0 0;
+}
+
+body > header .about {
+  display: none;
+}
+
+body > header a {
+  color: #FFF;
+}
+body > header p a {
+  display: none;
+}
+
+body > header a:hover {
+  color: #EEE;
+}
+
+body > header {
+  color: #FFF;
+  background-color: #222;
+}

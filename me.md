@@ -1,79 +1,60 @@
 ---
 layout: default
 title: Omar Abdel-Wahab | Lead Software Engineer
-
 ---
-## Profile
-A friendly geek, a serial entrepreneur and a veteran hacker.
+### Profile
+Combining technical, business and human aspects of building technology products and startups thanks to over 14 years of experience.
 
-By day, I'm a full stack software engineer with over 13 years of experience specialized in web application development using Open Source technologies such as Ruby on Rails, NodeJS and PHP. I strive to use the best technology to get the job done.
+- Possessing excellent leadership, negotiation and presentation skills.
+- Managing releases, define quality metrics and delivery operations for software products.
+- Experienced with modern agile development techniques (Scrum and Kanban).
+- Defining and optimizing various processes to streamline team and company productivity.
+- Talent acquisition, training, and managing functional and cross-functional teams up to 14 people.
+- Experienced in product integration techniques, multi-tier applications, SOA and MSA.
+- Delivered robust production apps in Ruby, PHP, Java, Go and JavaScript.
+- Built solutions using PostgreSQL, MySQL, Solr/ElasticSearch, Redis, MongoDb and InfluxDb.
+- Covered over 80% of my projects using Rspec, Capybara, PHPUnit, JUnit, Jasmine and Minitest.
+- Continuously delivered web and mobile apps using Jenkins/Hudson, Travis, CodeShip and BitBucket Pipelines.
+- Scaled on bare metal, Digital Ocean and AWS using a plethora of tools varying from simple shell scripts to Capistrano, AWS Code Deploy, Ansible and Docker Swarm.
+- Automated orchestration and provisioning using Ansible, Chef, TerraForm and Packer.
+- Built native Android and Cross-platform mobile apps.
 
-By night, I enjoy the company of my wife and 3 beautiful kids or hangout with friends where we play PES, table tennis and chess.
+### Experience
 
-## Experience
+#### Senior Software Engineer @ Ocono
+_Apr 2017 - Present_
+
+- Maintained an ad delivery system serving millions of requests per hour.
+- Powered a massive refactoring of legacy systems into more efficient ones.
 
 #### CTO @ Eventtus
-_Jan 2016 - Present_
+_Oct 2015 - Feb 2017_
 
-On a mission to take one of the most successful startups in Egypt to the next level.
-
-* Re-architected the underlying business logic for the company's core software to use Microservices architecture with 2 Ruby on Rails services, 3 NodeJS services communicating through RESTful APIs, using 5 data storage engines/database: PostgreSQL, Redis, InfluxDb, MongoDb and ElasticSearch.
-* Automated the software delivery process using Continuous Delivery, Automated Code Review and AWS Auto scaling features.
-* Created multiple processes, including but not limited to Software Delivery, Recruiting, Competency-based Appraisal and Development Operations.
-* Separated the concern of software building between the teams of Development, Quality, Development Operations and Product.
-* Built a solid rapid delivery process for the web team and optimized the mobile continuous delivery process.
-* Started with 2 Web developers and 2 mobile developers, I recruited 7 more team members and still increasing.
-* Contributed and coded on daily basis in JavaScript and Ruby.
+- Helped the company raise Series A and increase its valuation by 2.5x.
+- Grew the company technical team from 2 people to 14 people. 
+- Architected and implemented fully-automated, rolling deployments using AWS, applied best DevOps practices resulting in 5x scalability at 75% cost.
+- Architected the switch from LAMP monolith to Microservices using Ruby, NodeJS and Go.
+- Revamped software delivery process and introduced various agile practices.
+- Scaled the company from 7 to 24 people by revamping the entire recruitment process, recruitment tools, introducing competency-based appraisal and enforcing pay grades.
 
 #### Interim CTO @ Appenza
-_Jun 2015 - August 2015_
+_Jun 2015 - Aug 2015_
 
-Was contracted by Appenza to bootstrap Aurora LMS, a learning management system targeting students in Egypt and Sudan.
-
-* Automated the software delivery process using Continuous Delivery on Heroku.
-* Recruited and trained a team of 8.
-* Architected the company's first product to use a single code base to deliver both web and mobile apps using AngularJS, Cordova and Ruby on Rails.
-* Contributed and coded on daily basis in JavaScript and Ruby.
-
-#### Lead Software Engineer (Remote) @ Creative Science Labs
-_Jan 2015 - May 2015_
-
-Working remotely with the company based in Washington, DC. I lead a small team of developers from East Asia to help the company deliver software services and products.
-Turns out working from home is far more challenging than it seemed and I was unable to cope up.
+Architected the company's first product using a single code base to deliver both web and mobile apps using AngularJS, Cordova and Ruby on Rails.
 
 #### Co-founder/CTO @ OverC Studios
 _Jul 2013 - Jan 2015_
 
-Co-founded OverC Studios to build cutting edge solutions for consumers in US and Canada. Reported to CEO Yousef Osman.
-
-* Despite being the CTO, I hired and coached almost everyone in the company and that includes non-technical staff members like office assistants, project coordinators and of course developers and testers.
-* Focused on software testing automation and all our products had at least 50% testing coverage.
-* Built a remote working culture supported by remote working tools such as Github with forks and pull requests being the main method to contribute to projects, HipChat as the main communication channel, Skype and Hangouts for meetings, Redmine and later on Jira for issue tracking, CodeShip for continuous integration of code and Heroku for demos.
-* Built a Heroku alternative in 8 weeks using Ruby on Rails, Redis, RabbitMQ, Git, SSH and Chef.
-* Managed a team distributed across India, Egypt and United States.
-* Architecting BlueScribe, a multi-client application with various challenges on each client.
+Built and architected multiple cross-platform mobile and web applications using Ruby on Rails, Ionic Framework and Electron. Recruited and managed a team of 13 people.
 
 #### Technology Manager @ Raya
 _Aug 2011 – Jun 2013_
 
-Recruited to build the company’s technology team and maintain software products and information technology.
-
-* I was hired initially by Raya Software to help the Microsoft partner build a LAMP team to deliver OshareK.
-* Hired and coached a team of 4 developers and 2 testers.
-* Coached a team of 4 developers for less than a month to build 4 products using LAMP and Ruby on Rails.
-* Actively and effectively participating in product planning, brainstorming, etc.
-* Built the company’s IT using free and open source software. Dovecot, Roundcube, Redmine, OpenLDAP and Debian.
-* Changed the company technology stack from PHP to Ruby on Rails.
-* Built the first 2 Egyptian social networks: OshareK and Nassya using LAMP and Rails.
-
+Helped a team of 16 engineers switch to Open Source software development, built the first 2 Egyptian social networks: OshareK and Nassya.
 #### Technology Manager @ Damlag
 _Jul 2010 - Jul 2011_
 
-Scaling elCinema.com, the Middle East open movie database.
-
-* Scaled [elCinema](http://elcinema.com) to 8M hits/month (50% YoY) and architected the first offline/online movie ticketing system in Egypt.
-* Built content leasing module and APIs.
-* Architected the content suggestion system.
+Architected the first offline/online movie ticketing system in Egypt now selling 100K+ tickets per month.
 
 #### Lead Software Engineer @ NTG - Egypt Development Center
 _Apr 2009 - Jul 2010_
@@ -100,3 +81,26 @@ Built multiple Drupal-based solutions and a continuous delivery solution for Dru
 
 ## Education
 I am a college dropout.
+
+## Links
+
+<i class="fa fa-linkedin"></i>
+&nbsp;&nbsp;&nbsp;&nbsp;<https://linkedin.com/in/owahab>
+
+<i class="fa fa-github-alt"></i>
+&nbsp;&nbsp;&nbsp;&nbsp;<https://github.com/owahab>
+
+<i class="fa fa-stack-overflow"></i>
+&nbsp;&nbsp;&nbsp;&nbsp;<http://stackoverflow.com/users/383819/owahab>
+
+<i class="fa fa-drupal"></i>
+&nbsp;&nbsp;&nbsp;&nbsp;<https://drupal.org/u/owahab>
+
+<i class="fa fa-diamond"></i>
+&nbsp;&nbsp;&nbsp;&nbsp;<https://rubygems.org/profiles/owahab>
+
+<i class="fa fa-twitter"></i>
+&nbsp;&nbsp;&nbsp;&nbsp;<https://twitter.com/owahab>
+
+<i class="fa fa-facebook"></i>
+&nbsp;&nbsp;&nbsp;&nbsp;<https://fb.com/owahab>
