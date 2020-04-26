@@ -1,34 +1,14 @@
 <script>
-// Disqus
-var disqus_shortname = 'owahab';
-if (!window.disqus_url) window.disqus_url = "http://owahab.github.io{{ page.url }}";
-if (!window.disqus_title) window.disqus_title = document.title;
-(function(){try{
-// this hack takes care of formatting # comments
-var v = document.getElementsByClassName('dsq-comment-count');
-var loaded = false;
-var polle;
-for (var i=0;i<v.length;i++) {
-  var e = v.item(i);
-  if (e.firstChild.nodeValue === '-') {
-    polle = e.firstChild;
-    break;
-  }
-}
-function onload() {
-  for (var i=0;i<v.length;i++) {
-    var e = v.item(i);
-    if (e.firstChild.nodeValue !== '0 and 0') {
-      var m = e.firstChild.nodeValue.split(' ');
-      e.firstChild.nodeValue = String(parseInt(m[0]) + parseInt(m[2]));
-      e.style.display = 'inline';
-    }
-  }
-}
-if (polle) {
-  var timer = setInterval(function(){
-    if (polle.nodeValue !== '-') { clearInterval(timer); onload(); }
-  },100);
-}
-}catch(e){}})();
+var disqus_config = function () {
+  this.page.url = "https://omar.page{{ page.url }}";
+  this.page.identifier = document.title;
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://owahab.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
 </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
