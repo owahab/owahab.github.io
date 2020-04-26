@@ -1,3 +1,9 @@
+---
+layout: post
+title: "On the MacBook and the rumored switch to ARM architecture"
+disqus_comments: true
+categories: apple macbook arm
+---
 With rumors and confirmed leaks, it seems like Apple will introduce an ARM laptop in 2021 sporting its upcoming A14 chip. While the step makes a lot of sense given Intel's recent struggle with improving its 14nm, trying to move to 10nm, and watching AMD storming the market with its Ryzen 7nm chips.
 
 ## Challenges
