@@ -1,0 +1,167 @@
+---
+layout: default
+title: Open Source
+permalink: /open-source.html
+description: >-
+  Open source contributions by Omar Ali: Ruby gems with 4.8M+ downloads,
+  GitHub projects, and Drupal modules and themes published since 2006.
+---
+
+{%- assign os = site.data.opensource -%}
+
+<section class="section page-head">
+  <div class="container">
+    <header class="section-header">
+      <p class="section-eyebrow">Open Source</p>
+      <h2 class="section-title">Contributions</h2>
+      <p class="section-lead">
+        Two decades of publishing in the open: Ruby gems, GitHub projects, and
+        Drupal modules and themes. Figures pulled from the RubyGems, GitHub and
+        Drupal.org APIs.
+      </p>
+    </header>
+
+    <ul class="hero-stats os-stats">
+      <li class="stat">
+        <span class="stat-number"
+              data-count="{{ os.rubygems.totals.downloads | divided_by: 1000000.0 }}"
+              data-decimals="2" data-suffix="M">0</span>
+        <span class="stat-label">Gem downloads</span>
+      </li>
+      <li class="stat">
+        <span class="stat-number" data-count="{{ os.rubygems.totals.gems }}">0</span>
+        <span class="stat-label">Ruby gems</span>
+      </li>
+      <li class="stat">
+        <span class="stat-number" data-count="{{ os.github.totals.stars }}">0</span>
+        <span class="stat-label">GitHub stars</span>
+      </li>
+      <li class="stat">
+        <span class="stat-number" data-count="{{ os.drupal.totals.projects }}">0</span>
+        <span class="stat-label">Drupal projects</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== RubyGems ===== -->
+<section id="rubygems" class="section">
+  <div class="container">
+    <header class="section-header">
+      <p class="section-eyebrow"><i class="fas fa-gem" aria-hidden="true"></i> RubyGems</p>
+      <h2 class="section-title">{{ os.rubygems.totals.gems }} gems, {{ os.rubygems.totals.downloads_display }} downloads</h2>
+      <p class="section-lead">
+        <a class="text-link" href="{{ os.rubygems.url }}" target="_blank" rel="noopener">
+          rubygems.org/profiles/owahab <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+      </p>
+    </header>
+
+    <ul class="os-list">
+      {%- for gem in os.rubygems.gems %}
+      <li class="os-item">
+        <div class="os-item-main">
+          <h3 class="os-item-title">
+            <a href="{{ gem.url }}" target="_blank" rel="noopener">{{ gem.name }}</a>
+            <span class="os-version">v{{ gem.version }}</span>
+          </h3>
+          <p class="os-item-desc">{{ gem.description }}</p>
+        </div>
+        <div class="os-item-metrics">
+          <span class="os-metric" title="Total downloads">
+            <i class="fas fa-download" aria-hidden="true"></i>
+            {{ gem.downloads_display }}
+          </span>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- ===== GitHub ===== -->
+<section id="github" class="section">
+  <div class="container">
+    <header class="section-header">
+      <p class="section-eyebrow"><i class="fab fa-github" aria-hidden="true"></i> GitHub</p>
+      <h2 class="section-title">{{ os.github.totals.repos }} projects, {{ os.github.totals.stars }} stars</h2>
+      <p class="section-lead">
+        Public since {{ os.github.since }}.
+        <a class="text-link" href="{{ os.github.url }}" target="_blank" rel="noopener">
+          github.com/owahab <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+      </p>
+    </header>
+
+    <ul class="os-list">
+      {%- for repo in os.github.repos %}
+      <li class="os-item">
+        <div class="os-item-main">
+          <h3 class="os-item-title">
+            <a href="{{ repo.url }}" target="_blank" rel="noopener">{{ repo.name }}</a>
+            {%- if repo.language %}
+            <span class="os-version">{{ repo.language }}</span>
+            {%- endif %}
+          </h3>
+          <p class="os-item-desc">{{ repo.description }}</p>
+        </div>
+        <div class="os-item-metrics">
+          <span class="os-metric" title="Stars">
+            <i class="fas fa-star" aria-hidden="true"></i> {{ repo.stars }}
+          </span>
+          <span class="os-metric" title="Forks">
+            <i class="fas fa-code-fork" aria-hidden="true"></i> {{ repo.forks }}
+          </span>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- ===== Drupal ===== -->
+<section id="drupal" class="section">
+  <div class="container">
+    <header class="section-header">
+      <p class="section-eyebrow"><i class="fab fa-drupal" aria-hidden="true"></i> Drupal.org</p>
+      <h2 class="section-title">{{ os.drupal.totals.modules }} modules, {{ os.drupal.totals.themes }} themes</h2>
+      <p class="section-lead">
+        Contributing since {{ os.drupal.since }}.
+        <a class="text-link" href="{{ os.drupal.url }}" target="_blank" rel="noopener">
+          drupal.org/u/owahab <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+      </p>
+    </header>
+
+    <ul class="os-list">
+      {%- for project in os.drupal.projects %}
+      <li class="os-item">
+        <div class="os-item-main">
+          <h3 class="os-item-title">
+            <a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.title }}</a>
+            <span class="os-version">{{ project.kind }}</span>
+          </h3>
+          <p class="os-item-desc">{{ project.name }}</p>
+        </div>
+        <div class="os-item-metrics">
+          {%- if project.sites > 0 %}
+          <span class="os-metric" title="Reported installs">
+            <i class="fas fa-server" aria-hidden="true"></i> {{ project.sites }}
+          </span>
+          {%- endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+
+    <p class="os-note">
+      Install counts come from Drupal.org's opt-in usage statistics and cover the
+      Drupal 5–7 era these projects were built for.
+    </p>
+  </div>
+</section>
+
+<p class="os-generated">
+  Data fetched {{ os.generated_at | date: '%B %-d, %Y' }} from the RubyGems, GitHub and
+  Drupal.org APIs.
+</p>

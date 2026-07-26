@@ -1,0 +1,24 @@
+<footer class="site-footer">
+  <div class="container footer-content">
+    <p class="footer-brand">Omar Ali</p>
+    <ul class="footer-social">
+      {%- for link in site.data.social %}
+      <li>
+        <a href="{{ link.url }}" target="_blank" rel="noopener me" aria-label="{{ link.name }}" title="{{ link.name }}">
+          <i class="{{ link.icon }}" aria-hidden="true"></i>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+    <p class="footer-meta">
+      &copy; {{ site.time | date: '%Y' }} Omar Ali &middot;
+      <a href="{{ '/open-source.html' | relative_url }}">Open Source</a> &middot;
+      <a href="{{ '/blog/' | relative_url }}">Blog</a> &middot;
+      <a href="{{ '/me.html' | relative_url }}">Resume</a>
+    </p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+  <i class="fas fa-chevron-up" aria-hidden="true"></i>
+</button>

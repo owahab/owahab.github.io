@@ -1,0 +1,122 @@
+---
+layout: default
+title: Resume
+permalink: /me.html
+description: >-
+  Full resume for Omar Ali, Senior Engineering Leader. Director / VP of
+  Engineering / CTO, 25+ years. Berlin, Germany.
+---
+
+<section class="section resume">
+  <div class="container container-narrow">
+    <header class="section-header">
+      <p class="section-eyebrow">Resume</p>
+      <h2 class="section-title">Omar Ali</h2>
+      <p class="section-lead">
+        Senior Engineering Leader &middot; Director / VP of Engineering / CTO &middot; 25+ years
+      </p>
+      <p class="resume-contact">
+        <span><i class="fas fa-location-dot" aria-hidden="true"></i> Berlin, Germany</span>
+        <a href="{{ site.influpert }}/s/" target="_blank" rel="noopener"><i class="fas fa-briefcase" aria-hidden="true"></i> Services</a>
+        <a href="https://www.linkedin.com/in/owahab/" target="_blank" rel="noopener me"><i class="fab fa-linkedin-in" aria-hidden="true"></i> /in/owahab</a>
+      </p>
+      <p class="hero-buttons">
+        <a class="btn btn-primary" href="{{ site.resume_url | relative_url }}">
+          <i class="fas fa-download" aria-hidden="true"></i> Download PDF
+        </a>
+        <a class="btn btn-secondary" href="{{ '/' | relative_url }}#work">
+          <i class="fas fa-handshake" aria-hidden="true"></i> Work with me
+        </a>
+      </p>
+    </header>
+
+    <div class="resume-block">
+      <h3 class="resume-heading">Profile</h3>
+      <p>
+        Builds and scales distributed engineering organizations across Europe, the
+        Middle East, Asia, and Australia. Strengths in engineering org design, scaling
+        and cross-region team leadership, hiring and bar-raising, M&amp;A technical
+        integration, and platform strategy, with a consistent record of strong team
+        health and above-average eNPS. Track record spanning finance, e-commerce, food
+        delivery, social media, advertising, and blockchain, including institutional
+        digital asset custody at Deutsche Bank and platform leadership at Delivery Hero
+        and HelloFresh. Deep in regulated fintech domains, including blockchain and
+        tokenization, MiCA/BaFin/AML compliance, and company-wide GraphQL API standards,
+        with a hands-on background across Java, Go, Python, Ruby, Node.js, and PHP on
+        AWS, GCP, and on-prem. Executive engineering roles across six companies
+        (Director at Deutsche Bank, HelloFresh, and Delivery Hero; CTO at EatFirst,
+        Eventtus, and OverC Studios), with 200+ interviews conducted, 80+ engineers
+        hired, and 10+ former direct reports since promoted into Director, Head-of, and
+        VP roles.
+      </p>
+    </div>
+
+    <div class="resume-block">
+      <h3 class="resume-heading">Experience</h3>
+      {%- for job in site.data.experience %}
+      <article class="resume-job">
+        <h4 class="resume-role">{{ job.role }}</h4>
+        <p class="resume-meta">
+          <span class="company">{{ job.company }}</span>
+          <span class="location">{{ job.location }}</span>
+          <span class="period">{{ job.period }}</span>
+        </p>
+        {%- if job.bullets and job.bullets.size > 0 %}
+        <ul class="resume-bullets">
+          {%- for bullet in job.bullets %}
+          <li>{{ bullet }}</li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+        {%- if job.tech and job.tech.size > 0 %}
+        <ul class="tags">
+          {%- for item in job.tech %}
+          <li class="tag">{{ item }}</li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+
+    <div class="resume-block">
+      <h3 class="resume-heading">Skills</h3>
+      <div class="skills-grid skills-grid-compact">
+        {%- for group in site.data.skills %}
+        <div class="skill-card">
+          <span class="skill-icon"><i class="{{ group.icon }}" aria-hidden="true"></i></span>
+          <h4 class="skill-name">{{ group.name }}</h4>
+          <ul class="tags">
+            {%- for item in group.items %}
+            <li class="tag">{{ item }}</li>
+            {%- endfor %}
+          </ul>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+
+    <div class="resume-block">
+      <h3 class="resume-heading">Education</h3>
+      <p>Cairo University, 2003.</p>
+    </div>
+
+    <div class="resume-block">
+      <h3 class="resume-heading">Languages</h3>
+      <p>English (Fluent), German (Intermediate), Arabic (Native).</p>
+    </div>
+
+    <div class="resume-block">
+      <h3 class="resume-heading">Elsewhere</h3>
+      <ul class="resume-links">
+        {%- for link in site.data.social %}
+        <li>
+          <a href="{{ link.url }}" target="_blank" rel="noopener me">
+            <i class="{{ link.icon }}" aria-hidden="true"></i> {{ link.name }}
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

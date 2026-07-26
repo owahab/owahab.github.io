@@ -2,7 +2,6 @@
 layout: post
 title: "PHP6: Is it a suitable time?"
 categories: php php6
-disqus_comments: true
 ---
 
 Since I started to read the news about PHP5, I was happy that Zend has finally deceided to bring us some real OOP to the world of PHP, regardless whether the OOP approch in PHP5 is what really we all wanted or not, still a good step I see in PHP5.

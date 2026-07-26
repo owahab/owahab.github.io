@@ -1,42 +1,30 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  {% include head.html %}
-</head>
-
-<body>
-
-  {% include header.html %}
-
-  <section>
-    <h2>{{ page.title }}</h2>
-
-    <div class="meta">
-      {{ page.date | date_to_string }}
-      {% if page.categories %}
-        <ul class="tags inline">
-          {% for tag in page.categories %}
+---
+layout: default
+---
+<article class="post section">
+  <div class="container container-narrow">
+    <header class="post-header">
+      <a class="post-back" href="{{ '/blog/' | relative_url }}">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> All posts
+      </a>
+      <h1 class="post-title">{{ page.title }}</h1>
+      <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          <i class="fas fa-calendar" aria-hidden="true"></i>
+          {{ page.date | date: '%B %-d, %Y' }}
+        </time>
+        {%- if page.categories and page.categories.size > 0 %}
+        <ul class="tags">
+          {%- for tag in page.categories %}
           <li class="tag">{{ tag }}</li>
-          {% endfor %}
+          {%- endfor %}
         </ul>
-      {% endif %}
-    </div>
-
-    {{ content }}
-
-    {% if page.disqus_comments %}
-        <h3 id="comments">Comments</h3>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-          window.disqus_identifier = "{{ page.id }}";
-        </script>
-        <script async src="http://hunch.disqus.com/embed.js"></script>
-        <noscript>Please enable JavaScript to view the
-          <a href="http://disqus.com/?ref_noscript=hunch">comments powered by Disqus.</a>
-        </noscript>
-        {% include disqus.html %}
+        {%- endif %}
       </div>
-      {% endif %}
-  </section>
-</body>
+    </header>
+
+    <div class="post-body">
+      {{ content }}
+    </div>
+  </div>
+</article>

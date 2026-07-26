@@ -1,0 +1,24 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+
+<section class="section error-page">
+  <div class="container container-narrow">
+    <p class="error-code gradient-text">404</p>
+    <h2 class="section-title">This page doesn't exist</h2>
+    <p class="section-lead">
+      The link may be broken, or the page moved when the site was rebuilt.
+    </p>
+    <p class="hero-buttons">
+      <a class="btn btn-primary" href="{{ '/' | relative_url }}">
+        <i class="fas fa-house" aria-hidden="true"></i> Go home
+      </a>
+      <a class="btn btn-secondary" href="{{ '/blog/' | relative_url }}">
+        <i class="fas fa-newspaper" aria-hidden="true"></i> Browse the blog
+      </a>
+    </p>
+  </div>
+</section>

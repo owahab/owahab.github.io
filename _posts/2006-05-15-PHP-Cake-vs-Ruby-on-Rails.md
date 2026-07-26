@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "PHP on Cake vs Ruby on Rails"
-disqus_comments: true
 ---
 
 Recently I had the opportunity to attend a seminar about Ruby on Rails, things were nice with Ruby and Rails, I liked scaffolding, I also liked the various features of Rails and I think it's the real power of RoR.

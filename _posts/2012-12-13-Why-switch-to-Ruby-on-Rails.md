@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Why switch to Ruby on Rails?"
-disqus_comments: true
 categories: ruby rails
 ---
 

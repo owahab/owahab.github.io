@@ -1,0 +1,29 @@
+# Derived from the per-role tech stacks in _data/experience.yml.
+
+- name: Languages
+  icon: fas fa-code
+  items: [Java, Go, Python, Ruby, Node.js, PHP, Kotlin, "C#"]
+
+- name: Data & Streaming
+  icon: fas fa-database
+  items: [PostgreSQL, Oracle, MongoDB, DynamoDB, Kafka, Aerospike, Hadoop]
+
+- name: Cloud & Platform
+  icon: fas fa-cloud
+  items: [AWS, GCP, On-prem, Terraform, Ansible, Consul, Packer]
+
+- name: Domain
+  icon: fas fa-shield-halved
+  items:
+    - Blockchain & Tokenization
+    - MiCA / BaFin / AML
+    - GraphQL API standards
+    - M&A technical integration
+
+- name: Leadership
+  icon: fas fa-users-gear
+  items:
+    - Engineering org design
+    - Cross-region team leadership
+    - Hiring & bar raising
+    - Platform strategy

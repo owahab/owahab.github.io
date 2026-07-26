@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Delivering emails to GMail, Yahoo! and Hotmail"
-disqus_comments: true
 ---
 
 Introduction: in the mid-2002, many e-mail providers like Yahoo and Hotmail (no GMail at that time) started the war against spam and they went on improving spam fighting since then.

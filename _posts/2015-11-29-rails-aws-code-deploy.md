@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Deploying Rails using AWS CodeDeploy"
-disqus_comments: true
 categories: aws rails
 ---
 ## Assumptions

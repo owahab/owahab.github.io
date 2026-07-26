@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Rails with AWS CloudFront"
-disqus_comments: true
 categories: rails aws cloudfront cors
 ---
 Let's confess, Rails isn't very good at serving static assets.

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Firefox finally did it!"
-disqus_comments: true
 categories: foss firefox browsers
 ---
 

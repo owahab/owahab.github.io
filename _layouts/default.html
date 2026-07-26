@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ site.lang | default: 'en' }}">
 
 <head>
   {% include head.html %}
 </head>
 
-<body>
-  {% include header.html %}
-  
-  <section>
+<body class="{{ page.body_class | default: 'page' }}">
+  {% include nav.html %}
+
+  <main id="main">
     {{ content }}
-  </section>
+  </main>
+
+  {% include footer.html %}
+
+  <script src="{{ '/javascripts/main.js' | relative_url }}" defer></script>
 </body>
+
+</html>

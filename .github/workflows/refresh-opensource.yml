@@ -1,0 +1,46 @@
+name: Refresh open source data
+
+# The site is a static GitHub Pages build, so the contributions page cannot
+# call these APIs at request time (RubyGems sends no CORS headers at all).
+# This refreshes the baked _data/opensource.yml monthly; pushing it triggers
+# the normal GitHub Pages rebuild.
+on:
+  schedule:
+    # 06:00 UTC on the 1st of each month.
+    - cron: '0 6 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-opensource
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+          # The script is stdlib-only; skip resolving the site's Gemfile.
+          bundler-cache: false
+
+      - name: Fetch latest data
+        run: ./script/fetch-opensource
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- _data/opensource.yml; then
+            echo "No changes."
+            exit 0
+          fi
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/opensource.yml
+          git commit -m "Refresh open source contribution data"
+          git push

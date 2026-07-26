@@ -1,0 +1,184 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Regenerates _data/opensource.yml from the GitHub, RubyGems and Drupal.org APIs.
+#
+#   ./script/fetch-opensource
+#
+# The site is a static GitHub Pages build, so none of this can run at request
+# time — RubyGems sends no CORS headers, which rules out fetching it from the
+# browser at all. The data is therefore baked into the repo and refreshed by
+# running this script.
+#
+# Stdlib only; no bundle exec needed.
+
+require 'net/http'
+require 'json'
+require 'yaml'
+require 'uri'
+require 'date'
+
+GITHUB_USER  = 'owahab'
+RUBYGEMS_USER = 'owahab'
+DRUPAL_USER  = 'owahab'
+
+OUTPUT = File.expand_path('../_data/opensource.yml', __dir__)
+
+def get_json(url)
+  uri = URI(url)
+  res = Net::HTTP.get_response(uri, 'User-Agent' => 'oali.me-fetch-opensource')
+
+  unless res.is_a?(Net::HTTPSuccess)
+    abort "  ! #{url}\n    #{res.code} #{res.message}"
+  end
+
+  JSON.parse(res.body)
+end
+
+# Drupal reports usage counts as a mix of Integer and String. Coerce before summing.
+def to_i_safe(value)
+  Integer(value.to_s, exception: false) || 0
+end
+
+# Liquid has no number-formatting filter, so the display strings are built here.
+def delimit(number)
+  number.to_s.reverse.scan(/\d{1,3}/).join(',').reverse
+end
+
+def compact(number)
+  return "#{(number / 1_000_000.0).round(2)}M" if number >= 1_000_000
+  return "#{(number / 1_000.0).round(1)}K" if number >= 1_000
+
+  number.to_s
+end
+
+# --- GitHub -----------------------------------------------------------------
+
+def fetch_github
+  profile = get_json("https://api.github.com/users/#{GITHUB_USER}")
+  repos   = get_json("https://api.github.com/users/#{GITHUB_USER}/repos?per_page=100&sort=updated")
+
+  # Forks are other people's work, and repos with no description are scratch
+  # space — neither belongs on a contributions page.
+  own = repos.reject { |r| r['fork'] }
+             .reject { |r| r['description'].to_s.strip.empty? }
+             .sort_by { |r| [-r['stargazers_count'], -r['forks_count'], r['name']] }
+
+  {
+    'url' => profile['html_url'],
+    'since' => Date.parse(profile['created_at']).strftime('%Y'),
+    'followers' => profile['followers'],
+    'totals' => {
+      'repos' => own.size,
+      'stars' => own.sum { |r| r['stargazers_count'] },
+      'forks' => own.sum { |r| r['forks_count'] }
+    },
+    'repos' => own.map do |r|
+      {
+        'name' => r['name'],
+        'description' => r['description'].strip,
+        'url' => r['html_url'],
+        'language' => r['language'],
+        'stars' => r['stargazers_count'],
+        'forks' => r['forks_count'],
+        'archived' => r['archived'],
+        'updated' => Date.parse(r['pushed_at']).to_s
+      }
+    end
+  }
+end
+
+# --- RubyGems ---------------------------------------------------------------
+
+def fetch_rubygems
+  gems = get_json("https://rubygems.org/api/v1/owners/#{RUBYGEMS_USER}/gems.json")
+  gems = gems.sort_by { |g| -g['downloads'] }
+  total = gems.sum { |g| g['downloads'] }
+
+  {
+    'url' => "https://rubygems.org/profiles/#{RUBYGEMS_USER}",
+    'totals' => {
+      'gems' => gems.size,
+      'downloads' => total,
+      'downloads_display' => delimit(total),
+      'downloads_compact' => compact(total)
+    },
+    'gems' => gems.map do |g|
+      {
+        'name' => g['name'],
+        'description' => g['info'].to_s.strip,
+        'url' => "https://rubygems.org/gems/#{g['name']}",
+        'version' => g['version'],
+        'downloads' => g['downloads'],
+        'downloads_display' => delimit(g['downloads'])
+      }
+    end
+  }
+end
+
+# --- Drupal.org -------------------------------------------------------------
+
+def fetch_drupal
+  user = get_json("https://www.drupal.org/api-d7/user.json?name=#{DRUPAL_USER}")
+  account = user.fetch('list').first or abort '  ! Drupal user not found'
+  uid = account['uid']
+
+  projects = { 'project_module' => 'Module', 'project_theme' => 'Theme' }.flat_map do |type, label|
+    get_json("https://www.drupal.org/api-d7/node.json?type=#{type}&author=#{uid}")
+      .fetch('list', [])
+      .map do |n|
+        machine = n['field_project_machine_name']
+        {
+          'title' => n['title'],
+          'name' => machine,
+          'kind' => label,
+          'url' => "https://www.drupal.org/project/#{machine}",
+          # project_usage is {branch => sites}; sum across branches.
+          'sites' => n.fetch('project_usage', {}).values.sum { |v| to_i_safe(v) }
+        }
+      end
+  end
+
+  projects = projects.sort_by { |p| [-p['sites'], p['title']] }
+
+  {
+    'url' => "https://www.drupal.org/u/#{DRUPAL_USER}",
+    'since' => Time.at(account['created'].to_i).utc.strftime('%Y'),
+    'totals' => {
+      'projects' => projects.size,
+      'modules' => projects.count { |p| p['kind'] == 'Module' },
+      'themes' => projects.count { |p| p['kind'] == 'Theme' }
+    },
+    'projects' => projects
+  }
+end
+
+# --- Main -------------------------------------------------------------------
+
+puts 'Fetching GitHub...'
+github = fetch_github
+puts "  #{github['totals']['repos']} repos, #{github['totals']['stars']} stars, #{github['totals']['forks']} forks"
+
+puts 'Fetching RubyGems...'
+rubygems = fetch_rubygems
+puts "  #{rubygems['totals']['gems']} gems, #{rubygems['totals']['downloads']} downloads"
+
+puts 'Fetching Drupal.org...'
+drupal = fetch_drupal
+puts "  #{drupal['totals']['projects']} projects " \
+     "(#{drupal['totals']['modules']} modules, #{drupal['totals']['themes']} themes)"
+
+data = {
+  'generated_at' => Date.today.to_s,
+  'github' => github,
+  'rubygems' => rubygems,
+  'drupal' => drupal
+}
+
+header = <<~YAML
+  # Generated by script/fetch-opensource — do not edit by hand.
+  # Re-run that script to refresh.
+YAML
+
+File.write(OUTPUT, header + data.to_yaml.sub(/\A---\n/, ''))
+puts "\nWrote #{OUTPUT}"

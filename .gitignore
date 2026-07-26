@@ -1,1 +1,7 @@
-_site/*
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+Gemfile.lock
+.playwright-mcp/
+.DS_Store

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Saving Paperclip Attachemnts Encoded Base64"
-disqus_comments: true
 categories: ruby rails
 ---
 

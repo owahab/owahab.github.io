@@ -1,32 +1,353 @@
 ---
 layout: default
-title: Random Thoughts
+title: Omar Ali
+body_class: home
+description: >-
+  Omar Ali, senior engineering leader with 25+ years. Director at Deutsche
+  Bank / DWS Core Platforms, building and scaling distributed engineering
+  organizations across Europe, the Middle East, Asia and Australia.
 ---
 
-{% for post in site.posts limit: 1 %}
-  <h2>{{ post.title }}</h2>
-  <div class="meta">
-    {{ post.date | date_to_string }}
-    {% if post.categories %}
-      <ul class="tags inline">
-        {% for tag in post.categories %}
-        <li class="tag">{{ tag }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+{%- assign os = site.data.opensource -%}
+
+<!-- ===== Hero ===== -->
+<section id="home" class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container hero-container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-subtitle">Senior Engineering Leader</p>
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text">Omar Ali</span>
+        </h1>
+        <p class="hero-role">
+          Director / VP of Engineering / CTO
+        </p>
+        <p class="hero-description">
+          I build and scale distributed engineering organizations across Europe,
+          the Middle East, Asia and Australia. Currently stewarding core platforms
+          and tokenization at <strong>Deutsche Bank / DWS</strong>.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="{{ site.resume_url | relative_url }}">
+            <i class="fas fa-download" aria-hidden="true"></i> Download Resume
+          </a>
+          <a class="btn btn-secondary" href="#work">
+            <i class="fas fa-handshake" aria-hidden="true"></i> Work with me
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-aside">
+        <div class="hero-portrait">
+          <span class="hero-orb" aria-hidden="true"></span>
+          <span class="hero-portrait-ring">
+            <img src="{{ site.portrait | relative_url }}"
+                 alt="Omar Ali" fetchpriority="high" decoding="async">
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spans the full hero width, not just the text column, so all five
+         counters fit on one line. -->
+    <ul class="hero-stats">
+      <li class="stat">
+        <span class="stat-number" data-count="70" data-suffix="+">0</span>
+        <span class="stat-label">Engineering org led</span>
+      </li>
+      <li class="stat">
+        <span class="stat-number" data-count="60" data-prefix="+">0</span>
+        <span class="stat-label">eNPS above average</span>
+      </li>
+      <li class="stat">
+        <span class="stat-number" data-count="25" data-suffix="+">0</span>
+        <span class="stat-label">Years in tech</span>
+      </li>
+      <li class="stat">
+        <span class="stat-number" data-count="10" data-suffix="+">0</span>
+        <span class="stat-label">Leaders grown</span>
+      </li>
+      <li class="stat">
+        <span class="stat-number" data-count="4">0</span>
+        <span class="stat-label">Regions led</span>
+      </li>
+    </ul>
   </div>
+</section>
 
-  <p>
-    {{ post.content }}
-  </p>
-  
-  <p><a href="{{ post.url }}#comments">Comments</a></p>
-{% endfor %}
+<!-- ===== About ===== -->
+<section id="about" class="section about">
+  <div class="container">
+    <header class="section-header">
+      <p class="section-eyebrow">About</p>
+      <h2 class="section-title">Engineering leadership, end to end</h2>
+    </header>
 
-<hr/>
-<h3>Older posts:</h3>
-<ul>
-{% for post in site.posts offset: 1 %}
-<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          I've spent 25+ years in engineering, the last decade of it leading organizations
+          rather than codebases. My strengths are engineering org design, scaling and
+          cross-region team leadership, hiring and bar-raising, M&amp;A technical
+          integration, and platform strategy, with a consistent record of strong team
+          health and above-average eNPS.
+        </p>
+        <p>
+          That track record spans finance, e-commerce, food delivery, social media,
+          advertising, and blockchain: institutional digital asset custody at
+          Deutsche Bank, platform leadership at Delivery Hero and HelloFresh. I go deep
+          in regulated fintech: blockchain and tokenization, MiCA/BaFin/AML compliance,
+          and company-wide GraphQL API standards, on a hands-on background across Java, Go,
+          Python, Ruby, Node.js and PHP, on AWS, GCP and on-prem.
+        </p>
+        <p>
+          Executive engineering roles across six companies, 200+ interviews conducted,
+          80+ engineers hired, and 10+ former direct reports since promoted into
+          Director, Head-of and VP roles.
+        </p>
+        <p class="about-cta">
+          <a class="text-link" href="{{ '/me.html' | relative_url }}">
+            Read the full resume <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+          <a class="text-link" href="{{ '/open-source.html' | relative_url }}">
+            Open source contributions <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </p>
+      </div>
+
+      <ul class="about-features">
+        <li class="feature-item">
+          <span class="feature-icon"><i class="fas fa-sitemap" aria-hidden="true"></i></span>
+          <div class="feature-text">
+            <strong>Org Design &amp; Scaling</strong>
+            <span>Built and led orgs of 14 to 60 engineers across four time zones.</span>
+          </div>
+        </li>
+        <li class="feature-item">
+          <span class="feature-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
+          <div class="feature-text">
+            <strong>Regulated Fintech</strong>
+            <span>MiCA, BaFin, AML/AFC and data-residency controls built into architecture.</span>
+          </div>
+        </li>
+        <li class="feature-item">
+          <span class="feature-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></span>
+          <div class="feature-text">
+            <strong>Platform Strategy</strong>
+            <span>Company-wide API standards, monolith-to-microservices cutovers, M&amp;A integration.</span>
+          </div>
+        </li>
+        <li class="feature-item">
+          <span class="feature-icon"><i class="fas fa-user-check" aria-hidden="true"></i></span>
+          <div class="feature-text">
+            <strong>Hiring &amp; Bar Raising</strong>
+            <span>200+ interviews, 80+ hires, competency-based appraisal and pay grades.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Experience ===== -->
+<section id="experience" class="section experience">
+  <div class="container">
+    <header class="section-header">
+      <p class="section-eyebrow">Experience</p>
+      <h2 class="section-title">Professional journey</h2>
+    </header>
+
+    <ol class="timeline">
+      {%- for job in site.data.experience %}
+      <li class="timeline-item{% if job.current %} is-current{% endif %}">
+        <div class="timeline-marker" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <h3 class="timeline-role">{{ job.role }}</h3>
+            <p class="timeline-company">
+              <span class="company">{{ job.company }}</span>
+              <span class="location"><i class="fas fa-location-dot" aria-hidden="true"></i> {{ job.location }}</span>
+            </p>
+            <p class="timeline-period">
+              <i class="fas fa-calendar" aria-hidden="true"></i> {{ job.period }}
+            </p>
+          </div>
+          {%- if job.bullets and job.bullets.size > 0 %}
+          <ul class="timeline-bullets">
+            {%- for bullet in job.bullets %}
+            <li>{{ bullet }}</li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+          {%- if job.tech and job.tech.size > 0 %}
+          <ul class="tags">
+            {%- for item in job.tech %}
+            <li class="tag">{{ item }}</li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<!-- ===== Skills ===== -->
+<section id="skills" class="section skills">
+  <div class="container">
+    <header class="section-header">
+      <p class="section-eyebrow">Skills</p>
+      <h2 class="section-title">Technical arsenal</h2>
+    </header>
+
+    <div class="skills-grid">
+      {%- for group in site.data.skills %}
+      <div class="skill-card">
+        <span class="skill-icon"><i class="{{ group.icon }}" aria-hidden="true"></i></span>
+        <h3 class="skill-name">{{ group.name }}</h3>
+        <ul class="tags">
+          {%- for item in group.items %}
+          <li class="tag">{{ item }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ===== Open source ===== -->
+<section id="open-source" class="section opensource">
+  <div class="container">
+    <header class="section-header">
+      <p class="section-eyebrow">Open Source</p>
+      <h2 class="section-title">Two decades in the open</h2>
+      <p class="section-lead">
+        Ruby gems, GitHub projects, and Drupal modules and themes, published
+        since {{ os.drupal.since }}.
+      </p>
+    </header>
+
+    <ul class="hero-stats os-stats">
+      <li class="stat">
+        <span class="stat-number"
+              data-count="{{ os.rubygems.totals.downloads | divided_by: 1000000.0 }}"
+              data-decimals="2" data-suffix="M">0</span>
+        <span class="stat-label">Gem downloads</span>
+      </li>
+      <li class="stat">
+        <span class="stat-number" data-count="{{ os.rubygems.totals.gems }}">0</span>
+        <span class="stat-label">Ruby gems</span>
+      </li>
+      <li class="stat">
+        <span class="stat-number" data-count="{{ os.github.totals.stars }}">0</span>
+        <span class="stat-label">GitHub stars</span>
+      </li>
+      <li class="stat">
+        <span class="stat-number" data-count="{{ os.drupal.totals.projects }}">0</span>
+        <span class="stat-label">Drupal projects</span>
+      </li>
+    </ul>
+
+    <ul class="os-list">
+      {%- for gem in os.rubygems.gems limit: 3 %}
+      <li class="os-item">
+        <div class="os-item-main">
+          <h3 class="os-item-title">
+            <a href="{{ gem.url }}" target="_blank" rel="noopener">{{ gem.name }}</a>
+            <span class="os-version">v{{ gem.version }}</span>
+          </h3>
+          <p class="os-item-desc">{{ gem.description }}</p>
+        </div>
+        <div class="os-item-metrics">
+          <span class="os-metric" title="Total downloads">
+            <i class="fas fa-download" aria-hidden="true"></i>
+            {{ gem.downloads_display }}
+          </span>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+
+    <p class="section-footer">
+      <a class="btn btn-ghost" href="{{ '/open-source.html' | relative_url }}">
+        All contributions <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ===== Writing ===== -->
+{%- if site.show_blog and site.posts.size > 0 %}
+<section id="writing" class="section writing">
+  <div class="container">
+    <header class="section-header">
+      <p class="section-eyebrow">Writing</p>
+      <h2 class="section-title">From the blog</h2>
+    </header>
+
+    <div class="post-grid">
+      {%- for post in site.posts limit: 3 %}
+      <article class="post-card">
+        <time class="post-card-date" datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: '%B %-d, %Y' }}
+        </time>
+        <h3 class="post-card-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        <p class="post-card-excerpt">
+          {{ post.content | strip_html | truncatewords: 28 }}
+        </p>
+      </article>
+      {%- endfor %}
+    </div>
+
+    <p class="section-footer">
+      <a class="btn btn-ghost" href="{{ '/blog/' | relative_url }}">
+        All {{ site.posts.size }} posts <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </p>
+  </div>
+</section>
+{%- endif %}
+
+<!-- ===== Contact ===== -->
+<section id="work" class="section contact">
+  <div class="container">
+    <header class="section-header">
+      <p class="section-eyebrow">Work with me</p>
+      <h2 class="section-title">Services, courses and writing</h2>
+      <p class="section-lead">
+        Engineering leadership, platform strategy and regulated fintech, packaged
+        as advisory services, courses, live sessions and a newsletter.
+      </p>
+    </header>
+
+    <div class="contact-grid">
+      <a class="contact-card contact-card-accent" href="{{ site.influpert }}/s/" target="_blank" rel="noopener">
+        <span class="contact-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></span>
+        <strong>Book a service</strong>
+        <span>Browse the service catalog</span>
+      </a>
+      <a class="contact-card" href="{{ site.influpert }}/k/" target="_blank" rel="noopener">
+        <span class="contact-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></span>
+        <strong>Enroll in a course</strong>
+        <span>Structured, self-paced</span>
+      </a>
+      <a class="contact-card" href="{{ site.influpert }}/w/" target="_blank" rel="noopener">
+        <span class="contact-icon"><i class="fas fa-chalkboard-user" aria-hidden="true"></i></span>
+        <strong>Join a webinar</strong>
+        <span>Live sessions and workshops</span>
+      </a>
+      <a class="contact-card" href="{{ site.influpert }}/n/" target="_blank" rel="noopener">
+        <span class="contact-icon"><i class="fas fa-envelope-open-text" aria-hidden="true"></i></span>
+        <strong>Subscribe to newsletters</strong>
+        <span>Notes on leading engineering</span>
+      </a>
+    </div>
+  </div>
+</section>

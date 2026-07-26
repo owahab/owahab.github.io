@@ -1,7 +1,60 @@
+title: Omar Ali
+tagline: Senior Engineering Leader
+description: >-
+  Senior engineering leader building and scaling distributed engineering
+  organizations across Europe, the Middle East, Asia and Australia.
+  Director at Deutsche Bank / DWS Core Platforms, Berlin.
+url: https://ali.so
+author: Omar Ali
+lang: en
+
+# No email address anywhere on the site, by design: nothing for harvesters
+# to scrape. All contact routes through Influpert or LinkedIn.
+#
+# Single source for the profile. Templates append /s/, /w/ and /n/ for
+# services, webinars and newsletters, so the domain and handle live here only.
+influpert: https://influpert.com/@omar
+resume_url: /downloads/Omar_Ali-Resume.pdf
+
+portrait: /images/omar-ali.jpg
+
+# The archive runs 2006-2020 and reads as dated, so the homepage section and
+# the nav entry are hidden. /blog/ and every post permalink still resolve, and
+# the footer still links to them. Flip to true to bring both back.
+show_blog: false
+
+# jekyll-seo-tag reads page.image, not site.image, so the share image has to
+# come through defaults to apply site-wide.
+defaults:
+  - scope:
+      path: ''
+    values:
+      image: /images/omar-ali.jpg
+
 permalink: /:year/:month/:day/:title.html
-paginate_path: 'page:num'
-lsi: true
-gems: [jekyll-gist]
+
+# The github-pages gem otherwise forces jekyll-theme-primer, which emits an
+# unreferenced 133KB assets/css/style.css. All styling here is vendored.
+theme: null
+
+# jekyll-feed defaults to 10 entries; this blog has 14 posts total.
+feed:
+  posts_limit: 30
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-gist
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - .claude
+  - script
+  - vendor
 
 kramdown:
   auto_ids: true
@@ -9,15 +62,3 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
-
-  coderay:
-    coderay_wrap: div
-    coderay_line_numbers: inline
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: style
-
-redcloth:
-  hard_breaks: true

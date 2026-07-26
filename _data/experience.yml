@@ -1,0 +1,129 @@
+# Rendered by index.html (Experience section) and me.html (resume page).
+
+- role: Senior Technology Manager, Director
+  company: Deutsche Bank / DWS Core Platforms
+  location: Berlin / Frankfurt, Germany
+  period: Jan 2026 - Present
+  current: true
+  bullets:
+    - Took ownership of DWS's core technology stack (SimCorp Dimension and Aladdin) by leading the Core Platforms squads, having been brought in to steward the asset-management platform foundation.
+    - Shaped DWS's new tokenization platform from the ground up by serving as Blockchain Tech Lead across its early architecture.
+  tech: [SimCorp Dimension, Aladdin, Blockchain]
+
+- role: Director - Digital Asset Custody
+  company: Deutsche Bank
+  location: Berlin / Frankfurt, Germany
+  period: Oct 2023 - Dec 2025
+  bullets:
+    - Launched the bank's first MiCA-ready blockchain platform under BaFin supervision by building and leading a 40-engineer team across Germany, the UK, and India.
+    - Made the platform production-ready by architecting and coordinating 20+ internal integrations into payment, custody, compliance, and core-banking systems.
+    - Kept the platform compliant with security, AML/AFC, data-privacy, and data-residency rules by embedding those controls directly into the architecture under financial-services oversight.
+    - Supported banking operations across multiple geographies by establishing secure, scalable system architectures suited to enterprise-grade demands.
+  tech: [Java, Kafka, Oracle, Blockchain, on-prem, GCP]
+
+- role: Director - Engagement Alliance
+  company: HelloFresh
+  location: Berlin, Germany
+  period: Feb 2023 - Aug 2023
+  bullets:
+    - Kept Recipe Engagement and Personalization shipping across HelloFresh's global brand portfolio by leading a 60-engineer alliance after taking over the engagement platform.
+    - Improved delivery throughput by running an organization optimization that made the alliance leaner and faster to ship.
+  tech: [Go, Kotlin, PostgreSQL, Kafka, Terraform, AWS]
+
+- role: Director - Vendor Supply Chain
+  company: Delivery Hero
+  location: Berlin, Germany
+  period: Apr 2021 - Jan 2023
+  bullets:
+    - Built a EUR 5M GMV Restaurant Supply Chain business serving foodpanda, PedidosYa, Talabat, and Mjam by bootstrapping the product and organization from scratch.
+    - Took a new platform from zero to kickoff within three months by drafting the technical roadmap and system designs on arrival.
+    - Recruited 80+ engineers across Delivery Hero by serving as bar raiser and hiring manager across 200+ interviews while scaling the organization.
+    - Set the GraphQL standard adopted across Delivery Hero brands by co-authoring the company-wide API Guidelines.
+    - Raised the bar on technical guidelines, cross-squad collaboration, hiring, and onboarding by introducing company-wide changes as a cross-company bar raiser.
+    - Scored 60+ points above the company-average eNPS by investing heavily in team health and culture while leading a newly formed org.
+  tech: [Python, Go, PostgreSQL, DynamoDB, Kafka, Terraform, AWS, GCP]
+
+- role: VP of Engineering
+  company: Jodel
+  location: Berlin, Germany
+  period: Apr 2020 - Mar 2021
+  bullets:
+    - Led engineering for Jodel's hyperlocal social network as VP of Engineering, owning platform delivery, reliability, and team leadership.
+  tech: []
+
+- role: CTO
+  company: EatFirst
+  location: Berlin, Germany
+  period: Apr 2019 - Apr 2020
+  bullets:
+    - Consolidated three acquired companies onto a unified platform in under 12 months by running the pre- and post-acquisition technical integration as CTO through the M&A.
+    - Kept delivery moving across four time zones by directly managing a 16-engineer team spanning Australia, Lithuania, Germany, and Egypt.
+    - Stood up a new Egyptian engineering team in six weeks by running a focused hiring sprint to add local delivery capacity.
+    - Simplified post-M&A complexity by planning and supervising the migration of acquired platforms onto a shared stack.
+  tech: [PHP, "C#", Python, PostgreSQL, SQL Server, Ansible, Terraform, AWS]
+
+- role: Lead Software Engineer
+  company: WeQ Global
+  location: Berlin, Germany
+  period: Apr 2017 - Mar 2019
+  bullets:
+    - Delivered 1B+ clicks per day at sub-50 ms p99 by building and scaling a distributed AdService to replace the legacy serving layer.
+    - Bought runway for the rebuild by maintaining and progressively refactoring a 50M-request/day PHP-on-MongoDB monolith.
+  tech: [Java, PHP, MongoDB, Aerospike, Kafka, Hadoop, Ansible, Consul, Packer, Terraform, AWS]
+
+- role: CTO
+  company: Eventtus
+  location: Cairo, Egypt
+  period: Oct 2015 - Feb 2017
+  bullets:
+    - Grew the technical team from 2 to 14 and scaled the company from 7 to 24 by rebuilding the hiring pipeline, introducing competency-based appraisals, and enforcing pay grades as incoming CTO.
+    - Reached 5x scalability at 75% of prior cost and powered conferences with 50k+ attendees by automating rolling deployments on AWS and cutting over from a monolith to microservices in Ruby, Node.js, and Go.
+  tech: [Ruby on Rails, Node.js, Go, PostgreSQL, AWS]
+
+- role: CTO
+  company: OverC Studios
+  location: Cairo, Egypt
+  period: Jul 2013 - Jan 2015
+  bullets:
+    - Shipped multiple cross-platform mobile projects by designing the architecture and building a 14-person team to stand up the studio.
+  tech: [Ruby on Rails, PostgreSQL, AWS]
+
+- role: Technology Manager
+  company: Raya Social Media
+  location: Cairo, Egypt
+  period: Aug 2011 - Jun 2013
+  bullets:
+    - Launched Egypt's first two social networks (OshareK and Nassya) by owning the technology end-to-end.
+  tech: [Ruby on Rails, PostgreSQL, AWS]
+
+- role: Technology Manager
+  company: Damlag
+  location: Cairo, Egypt
+  period: Jul 2010 - Jul 2011
+  bullets:
+    - Architected the first offline/online movie ticketing system in Egypt, now selling 100K+ tickets per month.
+  tech: [PHP, MySQL, Linux]
+
+- role: Development Team Lead
+  company: NTG - Egypt Development Center
+  location: Cairo, Egypt
+  period: Apr 2009 - Jul 2010
+  bullets:
+    - Maintained a portal serving 1M hits per minute and mentored a strong open source team.
+  tech: [PHP, Apache, MySQL, Linux]
+
+- role: Lead Software Engineer
+  company: OpenCraft
+  location: Cairo, Egypt
+  period: Mar 2006 - Mar 2009
+  bullets:
+    - Delivered solutions based on Drupal, vTiger CRM and Apache Lucene by leading and mentoring a small team of engineers and designers.
+    - Shortened release cycles across client projects by building a continuous delivery pipeline for Drupal.
+  tech: [PHP, Drupal, vTiger CRM, Apache Lucene, MySQL, Linux]
+
+- role: Earlier roles
+  company: Software engineering
+  location: Cairo, Egypt
+  period: 2002 - 2006
+  bullets: []
+  tech: []

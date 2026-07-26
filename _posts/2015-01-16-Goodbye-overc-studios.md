@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Goodbye OverC Studios"
-disqus_comments: true
 categories: overc work entrepreneurship 
 ---
 

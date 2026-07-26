@@ -1,39 +1,95 @@
+/* Print: flatten to plain black-on-white, drop all chrome. */
+
 body {
-  box-sizing: border-box;
-  color:#373737;
-  font-size: 16px;
-  font-family: Ubuntu, Helvetica, Arial, sans-serif;
-  line-height: 1.2;
-  font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-  width: 100%;
+  color: #000;
+  background: #fff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 11pt;
+  line-height: 1.4;
 }
 
-a {
-  text-decoration: none;
+a { color: #000; text-decoration: none; }
+
+/* Reveal destinations that are otherwise lost on paper. */
+.post-body a[href^='http']::after,
+.resume-links a[href^='http']::after {
+  content: ' (' attr(href) ')';
+  font-size: .85em;
+  word-break: break-all;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
-  margin: 0.25em 0 0 0;
+  color: #000;
+  line-height: 1.25;
+  page-break-after: avoid;
 }
 
-body > header .about {
-  display: none;
+.container,
+.container-narrow {
+  max-width: none;
+  padding: 0;
 }
 
-body > header a {
-  color: #FFF;
-}
-body > header p a {
-  display: none;
+.section,
+.post,
+.resume,
+.page-head { padding: 0; background: none; }
+
+.section-eyebrow,
+.footer-brand,
+.gradient-text,
+.stat-number {
+  background: none;
+  -webkit-text-fill-color: #000;
+  color: #000;
 }
 
-body > header a:hover {
-  color: #EEE;
+.tag {
+  background: none;
+  color: #000;
+  padding: 0;
 }
 
-body > header {
-  color: #FFF;
-  background-color: #222;
+.tags {
+  gap: 0;
+  font-size: .9em;
 }
+
+.tags li:not(:last-child)::after { content: ' \00b7 '; }
+
+.timeline { padding-left: 0; }
+.timeline::before { display: none; }
+
+.timeline-card,
+.skill-card,
+.post-card,
+.feature-item,
+.contact-card {
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+  background: none;
+}
+
+.timeline-item + .timeline-item,
+.resume-job + .resume-job {
+  margin-top: 16pt;
+  page-break-inside: avoid;
+}
+
+/* Interactive-only chrome has no meaning on paper. */
+.navbar,
+.site-footer,
+.back-to-top,
+.hero-aside,
+.hero-bg,
+.hero-buttons,
+.post-back,
+.section-footer,
+.about-cta,
+.contact-icon,
+.skill-icon,
+.feature-icon,
+.timeline-marker { display: none !important; }
+
+.reveal { opacity: 1 !important; transform: none !important; }

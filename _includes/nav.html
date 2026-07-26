@@ -1,0 +1,34 @@
+{%- assign home = '/' | relative_url -%}
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a class="nav-logo" href="{{ home }}">
+      <i class="fas fa-terminal" aria-hidden="true"></i>
+      <span>Omar Ali</span>
+    </a>
+
+    <ul class="nav-menu" id="nav-menu">
+      <li><a class="nav-link" href="{{ home }}#home">Home</a></li>
+      <li><a class="nav-link" href="{{ home }}#about">About</a></li>
+      <li><a class="nav-link" href="{{ home }}#experience">Experience</a></li>
+      <li><a class="nav-link" href="{{ home }}#skills">Skills</a></li>
+      <li><a class="nav-link" href="{{ home }}#open-source">Open Source</a></li>
+      {%- if site.show_blog %}
+      <li><a class="nav-link" href="{{ home }}#writing">Blog</a></li>
+      {%- endif %}
+      <li><a class="nav-link" href="{{ home }}#work">Work with me</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" type="button"
+              aria-label="Toggle dark mode" aria-pressed="false">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+      </button>
+      <button class="hamburger" id="hamburger" type="button"
+              aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </div>
+</nav>

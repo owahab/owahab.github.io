@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Organize your downloads, the OS X way"
-disqus_comments: true
 categories: mac osx applescripts
 ---
 

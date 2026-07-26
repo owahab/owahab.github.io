@@ -1,0 +1,43 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+description: >-
+  Notes on software engineering, Ruby, infrastructure and the occasional
+  opinion, written between 2006 and today.
+---
+
+<section class="section page-head">
+  <div class="container">
+    <header class="section-header">
+      <p class="section-eyebrow">Writing</p>
+      <h2 class="section-title">Blog</h2>
+      <p class="section-lead">
+        {{ site.posts.size }} posts, going back to {{ site.posts.last.date | date: '%Y' }}.
+      </p>
+    </header>
+
+    <div class="post-grid">
+      {%- for post in site.posts %}
+      <article class="post-card">
+        <time class="post-card-date" datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: '%B %-d, %Y' }}
+        </time>
+        <h3 class="post-card-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        <p class="post-card-excerpt">
+          {{ post.content | strip_html | truncatewords: 30 }}
+        </p>
+        {%- if post.categories and post.categories.size > 0 %}
+        <ul class="tags">
+          {%- for tag in post.categories %}
+          <li class="tag">{{ tag }}</li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

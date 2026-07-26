@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Sample Files for Testing"
-disqus_comments: true
 categories: samples testing
 ---
 I often need sample files to test my code. Somtimes I need more specific files like a small MP4 file or a large PNG file, etc.

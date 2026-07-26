@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Ruby 1.8.4 on Ubuntu"
-disqus_comments: true
 categories: ruby rails ubuntu
 ---
 
