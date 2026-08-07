@@ -26,6 +26,12 @@ DRUPAL_USER  = 'owahab'
 # contribution on that page is noise, not a portfolio entry.
 EXCLUDED_REPOS = %w[owahab.github.io].freeze
 
+# Projects that live outside the personal account — transferred to an org, or
+# started in one. The /users/:user/repos endpoint only returns what the account
+# itself owns, so these are fetched one at a time by full name. Without this a
+# transfer silently drops the project from the page at the next refresh.
+EXTERNAL_REPOS = %w[influpert/riprap].freeze
+
 # Repos whose GitHub "homepage" field is worth showing. GitHub returns one for
 # several older repos too, but those point at a dead domain, at this site
 # itself, or at a successor org — none of which tell a reader anything. Add a
@@ -85,10 +91,13 @@ end
 def fetch_github
   profile = get_json("https://api.github.com/users/#{GITHUB_USER}")
   repos   = get_json("https://api.github.com/users/#{GITHUB_USER}/repos?per_page=100&sort=updated")
+  repos += EXTERNAL_REPOS.map { |full_name| get_json("https://api.github.com/repos/#{full_name}") }
 
   # Forks are other people's work, and repos with no description are scratch
-  # space — neither belongs on a contributions page.
-  own = repos.reject { |r| r['fork'] }
+  # space — neither belongs on a contributions page. A repo transferred out of
+  # the account still answers on the old path, so drop any duplicates.
+  own = repos.uniq { |r| r['full_name'] }
+             .reject { |r| r['fork'] }
              .reject { |r| r['description'].to_s.strip.empty? }
              .reject { |r| EXCLUDED_REPOS.include?(r['name']) }
 

@@ -4,7 +4,7 @@ generated_at: '2026-08-07'
 github:
   url: https://github.com/owahab
   since: '2009'
-  followers: 99
+  followers: 98
   totals:
     repos: 15
     stars: 140
@@ -12,7 +12,7 @@ github:
   repos:
   - name: riprap
     description: Riprap for your Claude Code Software Projects
-    url: https://github.com/owahab/riprap
+    url: https://github.com/influpert/riprap
     language: Shell
     stars: 0
     forks: 0
@@ -136,70 +136,70 @@ rubygems:
   url: https://rubygems.org/profiles/owahab
   totals:
     gems: 12
-    downloads: 4895160
-    downloads_display: '4,895,160'
+    downloads: 4896048
+    downloads_display: '4,896,048'
     downloads_compact: 4.9M
   gems:
   - name: av
     description: Programmable Ruby interface for FFMPEG/Libav
     url: https://rubygems.org/gems/av
     version: 0.9.0
-    downloads: 2121191
-    downloads_display: '2,121,191'
+    downloads: 2121801
+    downloads_display: '2,121,801'
   - name: paperclip-av-transcoder
     description: Audio/Video Transcoder for Paperclip using FFMPEG/Avconv
     url: https://rubygems.org/gems/paperclip-av-transcoder
     version: 0.6.4
-    downloads: 1694092
-    downloads_display: '1,694,092'
+    downloads: 1694256
+    downloads_display: '1,694,256'
   - name: uniqueness
     description: Adds unique attribute support to ActiveModel models.
     url: https://rubygems.org/gems/uniqueness
     version: 1.1.0
-    downloads: 418743
-    downloads_display: '418,743'
+    downloads: 418835
+    downloads_display: '418,835'
   - name: paperclip-ffmpeg
     description: Process your attachments with FFMPEG
     url: https://rubygems.org/gems/paperclip-ffmpeg
     version: 1.2.0
-    downloads: 418098
-    downloads_display: '418,098'
+    downloads: 418109
+    downloads_display: '418,109'
   - name: recognition
     description: Recognize users by giving them points and rewards for their actions
     url: https://rubygems.org/gems/recognition
     version: 0.8.6
-    downloads: 56932
-    downloads_display: '56,932'
+    downloads: 56934
+    downloads_display: '56,934'
   - name: spaghetti
     description: Spaghetti - Rails Endless Page
     url: https://rubygems.org/gems/spaghetti
     version: 0.6.0
-    downloads: 50449
-    downloads_display: '50,449'
+    downloads: 50451
+    downloads_display: '50,451'
   - name: activesorting
     description: Adds ability to sort models using a custom field
     url: https://rubygems.org/gems/activesorting
     version: 0.8.3
-    downloads: 31686
-    downloads_display: '31,686'
+    downloads: 31689
+    downloads_display: '31,689'
   - name: gub
     description: The missing command line tool for Github
     url: https://rubygems.org/gems/gub
     version: 0.2.0
-    downloads: 30548
-    downloads_display: '30,548'
+    downloads: 30549
+    downloads_display: '30,549'
   - name: rails_autocomplete
     description: Hassle-free autocomplete for Rails 3
     url: https://rubygems.org/gems/rails_autocomplete
     version: 0.1.0
-    downloads: 26433
-    downloads_display: '26,433'
+    downloads: 26435
+    downloads_display: '26,435'
   - name: paperclip-av-chainer
     description: Audio/Video Chainer for Paperclip using FFMPEG/Avconv
     url: https://rubygems.org/gems/paperclip-av-chainer
     version: 0.6.3
-    downloads: 22499
-    downloads_display: '22,499'
+    downloads: 22500
+    downloads_display: '22,500'
   - name: mozzn
     description: Command Line Interface to mozzn
     url: https://rubygems.org/gems/mozzn
