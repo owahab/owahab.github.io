@@ -104,6 +104,12 @@ description: >-
             {%- endif %}
           </h3>
           <p class="os-item-desc">{{ repo.description }}</p>
+          {%- if repo.homepage %}
+          <a class="os-item-link" href="{{ repo.homepage }}" target="_blank" rel="noopener">
+            {{ repo.homepage_display }}
+            <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+          {%- endif %}
         </div>
         <div class="os-item-metrics">
           <span class="os-metric" title="Stars">

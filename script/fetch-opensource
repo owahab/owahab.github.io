@@ -22,6 +22,22 @@ GITHUB_USER  = 'owahab'
 RUBYGEMS_USER = 'owahab'
 DRUPAL_USER  = 'owahab'
 
+# This site's own repo. Listing the thing that renders the page as a
+# contribution on that page is noise, not a portfolio entry.
+EXCLUDED_REPOS = %w[owahab.github.io].freeze
+
+# Repos whose GitHub "homepage" field is worth showing. GitHub returns one for
+# several older repos too, but those point at a dead domain, at this site
+# itself, or at a successor org — none of which tell a reader anything. Add a
+# name here when a project grows a site of its own.
+LINKED_HOMEPAGES = %w[riprap].freeze
+
+# Anything pushed since this date is current work and leads the GitHub list,
+# newest first; everything older is history, ranked by the stars it earned.
+# Sorting the whole list by stars buries a new project under a decade-old one
+# no matter how good it is.
+ACTIVE_SINCE = Date.new(2024, 1, 1)
+
 OUTPUT = File.expand_path('../_data/opensource.yml', __dir__)
 
 def get_json(url)
@@ -52,6 +68,18 @@ def compact(number)
   number.to_s
 end
 
+# GitHub stores whatever scheme the owner typed years ago, which is often http
+# even where the site now serves https. Upgrading is safe here because
+# LINKED_HOMEPAGES is hand-maintained — adding a name vouches for the site.
+def homepage_for(repo)
+  return unless LINKED_HOMEPAGES.include?(repo['name'])
+
+  url = repo['homepage'].to_s.strip
+  return if url.empty?
+
+  url.sub(%r{\Ahttp://}, 'https://')
+end
+
 # --- GitHub -----------------------------------------------------------------
 
 def fetch_github
@@ -62,7 +90,11 @@ def fetch_github
   # space — neither belongs on a contributions page.
   own = repos.reject { |r| r['fork'] }
              .reject { |r| r['description'].to_s.strip.empty? }
-             .sort_by { |r| [-r['stargazers_count'], -r['forks_count'], r['name']] }
+             .reject { |r| EXCLUDED_REPOS.include?(r['name']) }
+
+  active, archive = own.partition { |r| Date.parse(r['pushed_at']) >= ACTIVE_SINCE }
+  own = active.sort_by { |r| [-Date.parse(r['pushed_at']).jd, r['name']] } +
+        archive.sort_by { |r| [-r['stargazers_count'], -r['forks_count'], r['name']] }
 
   {
     'url' => profile['html_url'],
@@ -74,7 +106,7 @@ def fetch_github
       'forks' => own.sum { |r| r['forks_count'] }
     },
     'repos' => own.map do |r|
-      {
+      entry = {
         'name' => r['name'],
         'description' => r['description'].strip,
         'url' => r['html_url'],
@@ -84,6 +116,15 @@ def fetch_github
         'archived' => r['archived'],
         'updated' => Date.parse(r['pushed_at']).to_s
       }
+
+      homepage = homepage_for(r)
+      next entry unless homepage
+
+      entry.merge(
+        'homepage' => homepage,
+        # Liquid has no URL-tidying filter, so the link text is built here.
+        'homepage_display' => homepage.sub(%r{\Ahttps?://}, '').chomp('/')
+      )
     end
   }
 end

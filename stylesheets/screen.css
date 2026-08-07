@@ -1054,6 +1054,20 @@ ul, ol { padding: 0; }
   overflow-wrap: anywhere;
 }
 
+.os-item-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 8px;
+  color: var(--primary);
+  font-size: .85rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.os-item-link i { font-size: .7rem; transition: transform var(--transition); }
+.os-item-link:hover i { transform: translateX(3px); }
+
 .os-item-metrics {
   display: flex;
   gap: 18px;
